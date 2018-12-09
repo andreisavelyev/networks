@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>reveal.js</title>
+
+  <link rel="stylesheet" href="css/reveal.css">
+  <link rel="stylesheet" href="css/theme/black.css">
+
+  <!-- Theme used for syntax highlighting of code -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
+  <link rel="stylesheet" href="css/authorstyle.css">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+  </script>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section>
+        <h2>Network protocols. REST API</h2>
+        <br />
+        <p class="right">by Andrei Savelyev</p>
+      </section>
+      <section>
+        <h3>Network protocols</h3>
+        <img src="images/network-general.jpg" alt="network">
+      </section>
+      <section>
+        <section>
+          <h3>OSI Model</h3>
+          <p class="fragment fade-up"><img src="images/OSI.gif" alt="OSI model"></p>
+        </section>
+        <section>
+          <h3>OSI vs TCP/IP</h3>
+          <img src="images/ositcp.jpg" alt="OSI vs TCP/IP models">
+        </section>
+      </section>
+      <section>
+        <section>
+          <h3>Application Layer</h3>
+          <p class="fragment fade-up"><b>DNS</b> - converts domain names into IP addresses</p>
+          <p class="fragment fade-up"><b>HTTP</b> - way to send resources that power the web (HTML, CSS, JSON. etc.)</p>
+          <p class="fragment fade-up"><b>FTP</b> - way to get files onto and off of a server</p>
+          <p class="fragment fade-up"><b>SSH</b> - way to manage a remote computer over the network</p>
+          <p class="fragment fade-up"><b>TSL/SSL</b> - network traffic encryption protocol</p>
+        </section>
+      </section>
+      <section>
+        <h3>Transport Layer</h3>
+        <p class="fragment fade-up"><b>TCP</b> - suited for applications that require high reliability and
+          transmission time is relatively less critical</p>
+        <p class="fragment fade-up"><b>UDP</b> - suitable for applications that need fast transmission such as games</p>
+      </section>
+      </section>
+      <section>
+        <h3>Network Layer</h3>
+        <p class="fragment fade-up"><b>IPv4</b> - 32 bits long, e.g. 216.33.144.12</p>
+        <p class="fragment fade-up"><b>IPv6</b> - 128 bits long, e.g. 2001:0db8:85a3:0000:0000:8a2e:0370:7334</p>
+      </section>
+      <section>
+        <h3>Physical Layer</h3>
+        <p>Protocols that operate only on a link - the network component that interconnects nodes or hosts in the
+          network. E.g. <b>Ethernet</b> or <b>ARP</b></p>
+      </section>
+      <section>
+        <section>
+          <h3>REST API</h3>
+          <p class="fragment fade-up"><b>API</b> - Application Programming Interface</p>
+          <p class="fragment fade-up"><b>REST</b> - Representational State Transfer</p>
+          <img src="images/rest.jpg" alt="REST">
+        </section>
+        <section>
+          <h3>Methods</h3>
+          <p class="fragment fade-up"><b>Get</b> - provides a read only access to a resource</p>
+          <p class="fragment fade-up"><b>Post</b> - used to create a new resource</p>
+          <p class="fragment fade-up"><b>Delete</b> - used to remove a resource</p>
+          <p class="fragment fade-up"><b>Put</b> - used to update an existing resource or create a new one</p>
+        </section>
+        <section>
+          <h3>OpenWeatherMap example</h3>
+          <p><img src="images/weather.PNG" alt="OpenWeatherMap"></p>
+        </section>
+        <section>
+          <h3>OpenWeatherMap example</h3>
+          <p class="fragment fade-up"><b>Get Key</b> - register on the website to get a key</p>
+          <p class="fragment fade-up"><b>Make a Request:</b></p>
+          <img class="fragment fade-up" src="images/url.PNG" alt="url">
+          <pre class="fragment fade-up"><code style="min-width: 1000px">
+              {"coord":{"lon":-0.13,"lat":51.51},
+              "weather":[{"id":300,"main":"Drizzle",
+              "description":"light intensity drizzle"}],"base":"stations",
+              "main":{"temp":280.32,"pressure":1012,"humidity":81,
+              "temp_min":279.15,"temp_max":281.15},
+              "visibility":10000,"wind":{"speed":4.1,"deg":80},
+              "clouds":{"all":90},"dt":1485789600,
+              "sys":{"type":1,"id":5091,"message":0.0103,
+              "country":"GB"}
+            </code></pre>
+        </section>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="lib/js/head.min.js"></script>
+  <script src="js/reveal.js"></script>
+
+  <script>
+    // More info about config & dependencies:
+    // - https://github.com/hakimel/reveal.js#configuration
+    // - https://github.com/hakimel/reveal.js#dependencies
+    Reveal.initialize({
+      dependencies: [
+        { src: 'plugin/markdown/marked.js' },
+        { src: 'plugin/markdown/markdown.js' },
+        { src: 'plugin/notes/notes.js', async: true },
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+      ]
+    });
+  </script>
+</body>
+
+</html>
