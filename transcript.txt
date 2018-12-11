@@ -1,0 +1,64 @@
+﻿So, hey, guys, today we are going to talk about Network Protocols and REST Api.
+A network protocol is a set of established rules that dictates how to format, 
+receive and transmit data so computer network devices - from servers and routers to endpoints - can communicate.
+Computers communicate using a layered set of protocols, a prominant example of which is the OSI model. OSI is an Open Systems Interconnection 
+reference model.
+The OSI model has seven different layers, each layer is directly linked to the layer above and below it if a layer exists.
+As the data travels down the OSI model each layer adds additional information to it. it continues until it reaches the last 
+layer - it is physical on the screen. 
+After that it is then transmitted across the network to the other side and the process is reversed.
+I will not dig deep into this model since this model is theoretical and is not directly implemented in modern networking.
+But I will tell you about TCP/IP model. This model consists of four layers as opposed to the the OSI model.
+At the top is the Application layer. It defines how certain services operate and how they can be used. For example, when
+make a request for a browser to access a web-server, it calls HTTP protocol to complete the request. The Application layer
+uses different ports to send data to the next layer, Transport layer. For example if the data is sent over port 25, the data is about the
+email request. 
+So, the next is transport layer. 
+It receives the data from application, breaks it into small chunks, adds headers to it like destination
+host, source host and transfer them to the network router for delivery.
+The Network layer is responsible for routing the data over the network. It adds and IP header containing the information
+about destionation IP and source IP and transmits it via a router to the next layer.
+Network access layer defines the certain protocols and hardware required to connect a host to a physical network.
+The destination can be another host in the network or a router for further forwarding.
+Now I will talk about the most useful protocols:
+DNS — converts human-readable domain names, e.g. www.google.com, into an IP address, e.g. 216.58.199.67 
+that can be understood by lower layers
+HTTP — The most common way to send resources that power the web, like HTML documents, 
+CSS, JavaScript and so on.
+FTP — A very common way to upload or download any data on the server. 
+SSH — A way to connect to a remote computer. So, for example you can easily connect a remote server, 
+type commands on your local computer and they will be executed on the server.
+at this layer there is a choice of tcp and UDP. TCP stands for transmission control protocol. 
+The next is Transport layer. Two very important protocols operate there.
+TCP is suited for applications that require high reliability and transmission time is relatively less critical. 
+if a data is corrupted or lost it sends it again.
+UDP is suitable for applications that require faster transmission but is not as reliable as UDP
+Nextwork layers 
+most of the Internet still runs on IPv4, but we’re running out of available addresses because the addresses are only 32 bits
+long (e.g. 216.58.199.67). IPv6 is being rolled out, It have some security and performance 
+improvements. It is much bigger, it is 128 bits long.
+Network access layer. The protocols in this layer depends on physical network being used. When a physical layer is 
+LAN, Ethernet can be used, when WAN, Point-to-Point can be used.
+The second part of my presentation is the REST Api
+API stands for application programming interface and actually it is when one piece of software to communicate
+to another. But when you hear people talk about Google's API what they're 
+talking about is a REST API. REST API is a representational state transfer. When you call the REST Api,the server 
+will respond with a representation of the state of the requested resource. There are two important things about REST API
+which I should tell you about: 
+1. The endpoint, - it is the url with the help of which you can retrieve data
+2. HTTP methods: get, post, put, delete
+
+Let’s now take a look at the example. You guys have probably seen a number of websites having a small sections on websites
+like tut.by depicting weather. 
+It can easily be achieved with the help of OpenWeatherMap. At the link https://openweathermap.org section api you can find 
+docs on how to use it. First of all you need to register at the website to obtain an API key
+will not be able to enjoy OpenWeather API. After that you’ll need to make a request. For that you’ll need to take 
+a sample url at OpenWeather docs and add two parameters two it in the form of key-value pairs. 
+The first key is q that stands for query and any city or country you’d like to find the weather for, the second key is 
+appid and its value - your API key. After you send this request, the server will respond with the JSON. Actually 
+I should have told you some minutes ago, that API can be in the form of HTML, XML or JSON. Here it is in JSON. With the help
+of this you can also make a section on your website depicting weather Most major companies, like Facebook or Twitter 
+also have it that allowing developers to write awesome applications using it.
+That was all for today! Thank you for your listening. If you have any questions, you can ask.
+
+It means when a RESTful API is called, the server will transfer to the client a representation of the state of the requested resource.
